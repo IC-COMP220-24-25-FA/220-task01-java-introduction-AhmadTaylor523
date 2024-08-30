@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import jdk.jfr.Timestamp;
+
 public class CircleTest {
 
     @Test
@@ -33,6 +35,12 @@ public class CircleTest {
     public void TestConstructorError(){
         assertThrows(IllegalArgumentException.class, () -> new Circle(0));
     }
+    @Test
+    public void TestLongestLineWithin() {
+    Circle myCircle = new Circle(2);
+    assertEquals(4.0, myCircle.longestLineWithin(), 0.0001);
+}
+
 
 
     
