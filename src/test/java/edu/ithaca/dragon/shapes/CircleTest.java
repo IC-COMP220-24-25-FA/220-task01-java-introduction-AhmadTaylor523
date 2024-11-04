@@ -4,10 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
-
-import jdk.jfr.Timestamp;
 
 public class CircleTest {
 
@@ -25,7 +22,7 @@ public class CircleTest {
         assertEquals(3.1415, myCircle.calcArea(), 0.0001);
         
         myCircle = new Circle(5.5);
-        assertEquals(95.0331, myCircle.calcArea(), 0.0001);
+        assertEquals(95.030375, myCircle.calcArea(), 0.0001);
 
         myCircle = new Circle(0.001);
         assertEquals(0.00000314159, myCircle.calcArea(), 0.0000000001);
@@ -33,22 +30,24 @@ public class CircleTest {
 
     @Test
     public void TestConstructorError(){
+        //This makes sure that the radius cant be under 0.
         assertThrows(IllegalArgumentException.class, () -> new Circle(0));
     }
     @Test
     public void TestLongestLineWithin() {
+        //This makes sure that the longest line within has the correct arithmetic
     Circle myCircle = new Circle(2);
     assertEquals(4.0, myCircle.longestLineWithin(), 0.0001);
 }
 
     @Test
-    public double TestdoubleSize(){
+    public void TestdoubleSize(){
+        //I use the longest line method to make sure that when I double the size my longest line also doubles. 
         Circle myCircle = new Circle (1);
         myCircle.doubleSize();
-        assertEquals(2,myCircle.radius,0.001);
+        assertEquals(4,myCircle.longestLineWithin(),0.001);
     }
 
 
 
-    
-}
+    }

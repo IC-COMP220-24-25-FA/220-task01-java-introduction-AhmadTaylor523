@@ -1,21 +1,23 @@
 package edu.ithaca.dragon.shapes;
 
-public class Circle {
+public class Circle implements Shape{
     private double radius;
 
     /**
      * @throws IllegalArgumentException if radius is not a positive number
      */
     public Circle(double radius){
+        if (radius <= 0){
+            throw new IllegalArgumentException("radius cant be negative");
+        }        
         this.radius = radius;
     }
-
+    
     /**
      * @return the area of this circle
      */
     public double calcArea(){
-        return 3.1415 * (this.radius * this.radius);
-        
+        return Math.PI * (radius*radius);
     }
 
     /**
@@ -29,7 +31,10 @@ public class Circle {
      * @return the longest straight line that can be drawn within this circle
      */
     public double longestLineWithin(){
-        return 2 * this.radius;
-        
+        return radius * 2;
+    }
+
+    public String toString(){
+        return "circle " + "radius: "+ radius;
     }
 }
