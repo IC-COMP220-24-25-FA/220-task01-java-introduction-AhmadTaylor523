@@ -9,14 +9,24 @@ public class FunctionPractice {
      * @throws IllegalArgumentException if any of the numbers is negative
      */
     public static int largestOfThree(int first, int second, int third){
-        throw new RuntimeException("Not Implemented");
+        if(first >= second && first >=third){
+            return first;
+        }
+        else if (second >= first && second >=third){
+            return second;
+        }
+        else{
+            return third;
+        }
     }
     
     /**
      * @return the final price at register of the given item after discount and tax applied
      */
     public static double calcSalePrice(double originalPrice, double discountPercent, double salesTax){
-        throw new RuntimeException("Not Implemented");
+        dis = originalPrice * (discountPercent/100);
+
+        
     }
 
     /**

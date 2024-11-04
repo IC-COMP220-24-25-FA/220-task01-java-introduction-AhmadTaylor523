@@ -1,6 +1,6 @@
 package edu.ithaca.dragon.shapes;
 
-public class Circle {
+public class Circle implements Shape{
     private double radius;
 
     /**
@@ -17,8 +17,7 @@ public class Circle {
      * @return the area of this circle
      */
     public double calcArea(){
-        return 3.1415 * (this.radius * this.radius);
-        
+        throw new RuntimeException("Not implemented yet");
     }
 
     /**
@@ -32,7 +31,6 @@ public class Circle {
      * @return the longest straight line that can be drawn within this circle
      */
     public double longestLineWithin(){
-        return 2 * this.radius;
-        
+        throw new RuntimeException("Not implemented yet");
     }
 }
