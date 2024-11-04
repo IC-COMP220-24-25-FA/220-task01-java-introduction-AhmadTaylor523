@@ -2,12 +2,56 @@ package edu.ithaca.dragon.shapes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
 
 public class ShapeMain {
 
     public static void main(String[] args) {
         int times = 5;
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        
+        List<Shape> shapeList = new ArrayList<>();
+
+        
+        for (int i = 0; i < 10; i++) {
+            int shapeType = random.nextInt(3); 
+            if (shapeType == 0) {
+                
+                shapeList.add(new Rectangle(random.nextDouble() * 10 + 1, random.nextDouble() * 10 + 1));
+            } else if (shapeType == 1) {
+                
+                shapeList.add(new Circle(random.nextDouble() * 10 + 1));
+            } else {
+                
+                shapeList.add(new Triangle(random.nextDouble() * 10 + 1, random.nextDouble() * 10 + 1));
+            }
+        }
+
+        
+        System.out.println("Shapes before doubling:");
+        for (Shape shape : shapeList) {
+            System.out.println(shape);
+        }
+
+        
+        for (Shape shape : shapeList) {
+            shape.doubleSize();
+        }
+
+        System.out.println("\nShapes after doubling:");
+        for (Shape shape : shapeList) {
+            System.out.println(shape);
+        }
+
+
+
+
+
+
+
+
+        
 
         
         Rectangle myRectangle = new Rectangle(3, 4);

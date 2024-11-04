@@ -1,6 +1,6 @@
 package edu.ithaca.dragon.shapes;
 
-public class Triangle {
+public class Triangle implements Shape{
     private double base;
     private double height;
 
@@ -14,8 +14,8 @@ public class Triangle {
         return 0.5 * base * height;
     }
 
-    
-    private void doubleSize() {
+    @Override
+    public void doubleSize() {
         base *= 2;
         height *= 2;
     }
@@ -23,5 +23,9 @@ public class Triangle {
     
     public double longestLineWithin() {
         return Math.sqrt(base * base + height * height); 
+    }
+
+    public String toString(){
+        return "triangle " + "base: "+ base + "height: "+ height;
     }
 }

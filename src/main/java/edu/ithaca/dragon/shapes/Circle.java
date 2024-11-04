@@ -17,7 +17,7 @@ public class Circle implements Shape{
      * @return the area of this circle
      */
     public double calcArea(){
-        throw new RuntimeException("Not implemented yet");
+        return Math.PI * (radius*radius);
     }
 
     /**
@@ -31,6 +31,10 @@ public class Circle implements Shape{
      * @return the longest straight line that can be drawn within this circle
      */
     public double longestLineWithin(){
-        throw new RuntimeException("Not implemented yet");
+        return radius * 2;
+    }
+
+    public String toString(){
+        return "circle " + "radius: "+ radius;
     }
 }
